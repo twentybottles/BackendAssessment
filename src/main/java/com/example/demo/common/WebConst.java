@@ -20,6 +20,8 @@ public interface WebConst {
 
 	public static final String CARDETAIL_FINDALL_URL = "/api/cardetail/findAll";
 	
+	public static final String CARDETAIL_UPDATE_URL = "/api/cardetail/update";
+
     /** ---- External API ---- **/
 
 	public static final String VIN_SPECIFICATION_LOGIN_URL = "https://www.clearvin.com/rest/vendor/login";
