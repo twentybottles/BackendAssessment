@@ -1,64 +1,92 @@
-	package com.example.demo.entity;
+package com.example.demo.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 import lombok.Data;
 
+@Entity
+@Table(name = "vin_specification")
 @Data
 public class VinSpecificationEntity {
 
-//	private static final long serialVersionUID = 1L;
-//
-////	@JsonProperty("vin")
-//	private String vin;
-//
-////	@JsonProperty("year")
-//	private String year;
-//
-////	@JsonProperty("make")
-//	private String make;
-//
-////	@JsonProperty("model")
-//	private String model;
-//
-////	@JsonProperty("trim_level")
-//	private String trim_level;
-//
-////	@JsonProperty("engine")
-//	private String engine;
-//
-////	@JsonProperty("style")
-//	private String style;
-//
-////	@JsonProperty("made_in")
-//	private String made_in;
-//
-////	@JsonProperty("steering_type")
-//	private String steering_type;
-//
-////	@JsonProperty("anti_brake_system")
-//	private String anti_brake_system;
-//
-////	@JsonProperty("tank_size")
-//	private String tank_size;
-//
-////	@JsonProperty("overall_height")
-//	private String overall_height;
-//
-////	@JsonProperty("overall_length")
-//	private String overall_length;
-//
-////	@JsonProperty("overall_width")
-//	private String overall_width;
-//
-////	@JsonProperty("standard_seating")
-//	private String standard_seating;
-//
-////	@JsonProperty("optional_seating")
-//	private String optional_seating;
-//
-////	@JsonProperty("highway_mileage")
-//	private String highway_mileage;
-//
-////	@JsonProperty("city_mileage")
-//	private String city_mileage;
+	private static final long serialVersionUID = 1L;
+	
+	@Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Long id;
+
+	@Column(length = 17)
+	private String vin;
+
+	@Column(length = 4)
+	private String year;
+
+	@Column(length = 20)
+	private String make;
+
+	@Column(length = 20)
+	private String model;
+
+	@Column(length = 2)
+	private String trim_level;
+
+	@Column(length = 64)
+	private String engine;
+
+	@Column(length = 64)
+	private String style;
+
+	@Column(length = 20)
+	private String made_in;
+
+	@Column(length = 20)
+	private String steering_type;
+
+	@Column(length = 7)
+	private String anti_brake_system;
+
+	@Column(length = 17)
+	private String tank_size;
+
+	@Column(length = 2)
+	private String overall_height;
+
+	@Column(length = 8)
+	private String overall_length;
+
+	@Column(length = 10)
+	private String overall_width;
+
+	@Column(length = 10)
+	private String standard_seating;
+
+	@Column(length = 4)
+	private String optional_seating;
+
+	@Column(length = 20)
+	private String highway_mileage;
+
+	@Column(length = 20)
+	private String city_mileage;
+
+	@Column(length = 7)
+    private String license_plate;
+
+	@Column(length = 17)
+    private String registration;
+
+	@Column(length = 2)
+    private String registration_state;
+
+	@Column(length = 8)
+    private String registration_expiration;
+
+	@Column(length = 64)
+    private String name_on_registration;
 
 }

@@ -2,7 +2,10 @@ package com.example.demo.controller;
 
 import static com.example.demo.common.WebConst.*;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,12 +26,12 @@ public class CarDetailRegisterController {
 	private CarDetailRegisterService carDetailRegisterService;
 
 	@RequestMapping(path = CARDETAIL_REGISTER_URL, method = RequestMethod.POST)
-	public ResponseEntity<String> carDetailRegister(@RequestBody CarDetailEntity carDetail) {
+	public ResponseEntity<String> carDetailRegister(@Valid @RequestBody CarDetailEntity carDetail) {
 
-//		carDetail.setVinSpecification(vinSpecificationSearchService.search(carDetail.getVin()));
+		carDetail.setVinSpecification(vinSpecificationSearchService.search(carDetail.getVin()));
 
 		carDetailRegisterService.save(carDetail);
-
+		
 		return ResponseEntity.ok("success");
 
 	}
