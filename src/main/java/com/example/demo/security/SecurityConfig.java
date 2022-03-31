@@ -1,19 +1,20 @@
 package com.example.demo.security;
 
+import static com.example.demo.common.WebConst.CARDETAIL_FINDALL_URL;
+import static com.example.demo.common.WebConst.CARDETAIL_FIND_URL;
+import static com.example.demo.common.WebConst.CARDETAIL_REGISTER_URL;
+import static com.example.demo.common.WebConst.GET;
+import static com.example.demo.common.WebConst.POST;
+
 import java.util.Arrays;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-import static com.example.demo.common.WebConst.LOCAL_HOST_3000;
-import static com.example.demo.common.WebConst.CARDETAIL_REGISTER_URL;
-import static com.example.demo.common.WebConst.POST;
-import static com.example.demo.common.WebConst.GET;
 
 
 @EnableWebSecurity
@@ -26,6 +27,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     	http
         .authorizeRequests()
         	.mvcMatchers(CARDETAIL_REGISTER_URL).permitAll()
+        	.mvcMatchers(CARDETAIL_FIND_URL).permitAll()
+        	.mvcMatchers(CARDETAIL_FINDALL_URL).permitAll()
             .anyRequest().authenticated()
             .and()
         .csrf()

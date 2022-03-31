@@ -10,7 +10,7 @@ import javax.persistence.Table;
 import lombok.Data;
 
 @Entity
-@Table(name = "vin_specification")
+@Table(name = "vin")
 @Data
 public class VinSpecificationEntity {
 

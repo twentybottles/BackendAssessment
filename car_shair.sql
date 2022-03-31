@@ -20,7 +20,7 @@ CREATE TABLE `car_detail` (
 
 DROP TABLE IF EXISTS vin_specification;
 
-CREATE TABLE `vin_specification` (
+CREATE TABLE `vin` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `message` varchar(64) NOT NULL,
   `status` varchar(5) NOT NULL,
