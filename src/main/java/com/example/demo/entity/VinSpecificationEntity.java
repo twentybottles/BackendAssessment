@@ -1,5 +1,6 @@
 package com.example.demo.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,10 +24,13 @@ public class VinSpecificationEntity {
 	
 	private String message;
 	
+	@Column(name = "report_id")
 	private String ReportId;
 	
+	@Column(name = "report_vin")
 	private String ReportVin;
 	
+	@Column(name = "report_report")
 	private String ReportReport;
 	
 	private String year;

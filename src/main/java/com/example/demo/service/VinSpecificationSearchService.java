@@ -1,11 +1,6 @@
 package com.example.demo.service;
 
-import static com.example.demo.common.WebConst.VIN_SPECIFICATION_LOGIN_URL;
-import static com.example.demo.common.WebConst.VIN_SPECIFICATION_SEARCH_URL;
-import static com.example.demo.common.WebConst.VIN_API_USERNAME;
-import static com.example.demo.common.WebConst.VIN_API_PASSWORD;
 import static com.example.demo.common.WebConst.OK;
-
 
 import org.json.JSONObject;
 import org.springframework.http.HttpStatus;
@@ -28,11 +23,12 @@ public class VinSpecificationSearchService {
         	
 //          String jsonString = "{\"email\": \""+ VIN_API_USERNAME + "\"," + "\"password\": \"" + VIN_API_PASSWORD + "\"}";   	
 //        	String resJson = restTemplate.postForObject(VIN_SPECIFICATION_LOGIN_URL, jsonString, String.class);  
-        	// It is necessary to register www.clearvin.com to get apikey as the authentication
+//			It is necessary to register www.clearvin.com to get apikey as the authentication
+
+        	//	consider to create VinUser table        	
             String resJson = "{\"status\": \"ok\", \"token\": \"ABCDEFG1234567\"}";
             
         	JSONObject jsonObj = new JSONObject(resJson);
-        	
         	String status = jsonObj.getString("status");
         	String token = jsonObj.getString("token");
         	
@@ -60,14 +56,15 @@ public class VinSpecificationSearchService {
     	entity.setStatus(OK);
     	entity.setMessage("Contains details about the result if status is error");
     	entity.setReportId("ReportId");
-    	entity.setReportVin("4F2YU09161KM33122");
+    	entity.setReportVin("4F2YU09161KM33121");
+    	entity.setReportReport("Report");
     	entity.setYear("2011");
     	entity.setMake("Audi");
     	entity.setModel("A6");
+    	entity.setMade_in("UNITED STATES");
     	entity.setTrim_level("");
     	entity.setEngine("3.5L V6 SOHC 24V");
     	entity.setStyle("SPORT UTILITY 4-DR");
-    	entity.setMade_in("UNITED STATES");
     	entity.setSteering_type("R&P");
     	entity.setAnti_brake_system("4-Wheel ABS");
     	entity.setTank_size("21.00 gallon");

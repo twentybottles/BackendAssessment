@@ -1,5 +1,6 @@
 package com.example.demo.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,7 +15,7 @@ import javax.validation.constraints.Size;
 import lombok.Data;
 
 @Entity
-@Table(name = "car_shair")
+@Table(name = "car_detail")
 @Data
 public class CarDetailEntity {
 
@@ -25,7 +26,7 @@ public class CarDetailEntity {
 	@Size(min = 17, max = 17)
 	private String vin;
 
-	@OneToOne
+	@OneToOne(cascade = CascadeType.PERSIST)
 	private VinSpecificationEntity vinSpecification;
 
 	@Min(0)
@@ -44,10 +45,5 @@ public class CarDetailEntity {
 
 	@Size(min = 1, max = 1)
 	private String delete_flg;
-
-	private String updated_timestamp;
-
-	@Column(updatable = false)
-	private String created_timestamp;
 
 }
