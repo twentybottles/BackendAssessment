@@ -19,7 +19,7 @@ public class CarDetailUpdateController {
 	@Autowired
 	private CarDetailUpdateService carDetailUpdateService;
 
-	@RequestMapping(path = CARDETAIL_UPDATE_URL, method = RequestMethod.POST)
+	@RequestMapping(path = CARDETAIL_UPDATE_URL, method = RequestMethod.PUT)
 	public CarDetailEntity carDetailUpdate(@Valid @RequestBody CarDetailEntity carDetail) {
 
 		return carDetailUpdateService.update(carDetail);

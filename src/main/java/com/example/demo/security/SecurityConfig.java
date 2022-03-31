@@ -4,6 +4,7 @@ import static com.example.demo.common.WebConst.CARDETAIL_FINDALL_URL;
 import static com.example.demo.common.WebConst.CARDETAIL_FIND_URL;
 import static com.example.demo.common.WebConst.CARDETAIL_REGISTER_URL;
 import static com.example.demo.common.WebConst.CARDETAIL_UPDATE_URL;
+import static com.example.demo.common.WebConst.CARDETAIL_DELETE_URL;
 import static com.example.demo.common.WebConst.GET;
 import static com.example.demo.common.WebConst.POST;
 
@@ -31,6 +32,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         	.mvcMatchers(CARDETAIL_FIND_URL).permitAll()
         	.mvcMatchers(CARDETAIL_FINDALL_URL).permitAll()
         	.mvcMatchers(CARDETAIL_UPDATE_URL).permitAll()
+        	.mvcMatchers(CARDETAIL_DELETE_URL).permitAll()
             .anyRequest().authenticated()
             .and()
         .csrf()
